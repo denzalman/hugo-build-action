@@ -15,4 +15,4 @@ RUN	apk add --no-cache \
 COPY action.sh /usr/bin/action.sh
 RUN chmod +x /usr/bin/action.sh
 
-ENTRYPOINT ["./usr/bin/action.sh"]
+ENTRYPOINT ["/usr/bin/action.sh"]
