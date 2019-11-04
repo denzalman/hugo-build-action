@@ -14,24 +14,23 @@ This action make build of Hugo static web pages and then deploy them to defined 
 ```
 name: Build and publish Hugo Pages
 on:
-push:
+  push:
     branches:
-    - master
+      - master
     paths:
-    - 'content/**'
-
+      - 'content/**'
 jobs:
-    build:
-        name: Deploy
-        runs-on: ubuntu-latest
-        steps:
-        - name: Checkout master
-            uses: actions/checkout@v1
+  build:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout master
+      uses: actions/checkout@v1
 
-        - name: Deploy the Github Pages
-            uses: denzalman/hugo-build-action@v1.0.0
-            env:
-                HUGO_VERSION: 0.59.1
-                TARGET_REPO: rtfmdev/rtfmdev.github.io
-                TOKEN: ${{ secrets.TOKEN }}
+    - name: Deploy the Github Pages
+      uses: denzalman/hugo-build-action@v1.0.0
+      env:
+        HUGO_VERSION: 0.59.1
+        TARGET_REPO: rtfmdev/rtfmdev.github.io
+        TOKEN: ${{ secrets.TOKEN }}
 ```
