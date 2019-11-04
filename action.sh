@@ -31,7 +31,7 @@ git clone "${TARGET_REPO_URL}" "${OLD_VERSION_DIR}"
 echo 'Move .git folder into new site folder'
 cp -r ${OLD_VERSION_DIR}/.git public/
 
-echo 'Commit and push the new site version'
+echo 'Commit and push generated site to the repo'
 
 if ! git config --get user.name; then
     git config --global user.name "${GITHUB_ACTOR}"
